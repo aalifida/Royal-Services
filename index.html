@@ -54,7 +54,7 @@
        <div class="heading-box">
            <h3 class="sub-head">We Specialize in a wide</h3>
            <h1 class="main-head">Spectrum of Cleaning</h1>
-           <a href="contact_us.html">Book Now <span class="iconify sent-icon" data-icon="wpf:sent"></span></a>
+           <a href="">Enquiry Now <span class="iconify sent-icon" data-icon="wpf:sent"></span></a>
        </div>
        <div class="yellow-circle1 pulse"></div>
        <img src="images/slider-man.png" alt="" class="slider-man ">
@@ -175,25 +175,25 @@
                   <h5 class="modal-title" id="exampleModalLabel">Book an Appointment</h5>
                   <button type="button" class="" data-bs-dismiss="modal" aria-label="Close"><span class="iconify" data-icon="ep:close-bold"></span></button>
                 </div> 
-                <form>
-                        <div class="modal-body booking-pop-body">
-                        <input type="text" class="popup-form" placeholder="Name">
-                        <input type="number" class="popup-form" placeholder="Phone">
-                        <input type="email" class="popup-form" placeholder="Email">
-                        <select class="popup-form">
-                            <option value="">Service Type</option>
-                            <option value="">House Cleaning</option>
-                            <option value="">Gardening</option>
-                            <option value="">Office Cleaning</option>
-                            <option value="">Stairs Cleaning</option>
-                            <option value="">Windows Cleaning</option>
-                        </select>
-                        <textarea cols="30" rows="3" class="popup-form" placeholder="Your comment"></textarea>
-                      </div>
-                      <div class="modal-footer booking-pop-footer">
-                        <button>Submit</button>
-                        </div>
-                </form>
+                <form action="submit-appointment.php" method="post">
+                    <div class="modal-body booking-pop-body">
+                    <input type="text" class="popup-form" placeholder="Name" required>
+                    <input type="number" class="popup-form" placeholder="Phone" required>
+                    <input type="email" class="popup-form" placeholder="Email" required>
+                    <select class="popup-form" required>
+                        <option value="">Service Type</option>
+                        <option value="">House Cleaning</option>
+                        <option value="">Gardening</option>
+                        <option value="">Office Cleaning</option>
+                        <option value="">Stairs Cleaning</option>
+                        <option value="">Windows Cleaning</option>
+                    </select>
+                    <textarea cols="30" rows="3" class="popup-form" placeholder="brief detail of service" required></textarea>
+                  </div>
+                  <div class="modal-footer booking-pop-footer">
+                    <button>Submit</button>
+                    </div>
+            </form>
                  
               </div>
             </div>

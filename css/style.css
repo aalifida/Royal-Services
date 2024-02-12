@@ -52,7 +52,7 @@ input[type="number"] {
   top: -16px;
   color: #000;
   width: 30px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   height: 30px;
   border-radius: 50%;
   text-align: center;
@@ -69,14 +69,14 @@ input[type="number"] {
 .booking-pop-footer button {
   color: black;
   font-size: 16px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 8px 20px;
   border-radius: 10px;
   font-weight: 700;
   border: none;
 }
 .booking-pop-footer button:hover {
-  background-color: #ffcc00;
+  background-color: #947f57;
   color: #000;
 }
 .booking-pop-footer button:focus {
@@ -176,7 +176,7 @@ input[type="number"] {
 }
 
 .li-active a {
-  color: #ffcc00 !important;
+  color: #947f57 !important;
   position: relative;
 }
 .li-active a::after {
@@ -184,7 +184,7 @@ input[type="number"] {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #ffcc00;
+  background-color: #947f57;
   position: absolute;
   top: 23px;
   right: 50%;
@@ -195,7 +195,7 @@ input[type="number"] {
   font-size: 17px;
   width: 29px;
   height: 29px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   text-align: center;
   line-height: 25px;
   color: white;
@@ -290,7 +290,7 @@ input[type="number"] {
   color: black;
   font-size: 13px;
   font-weight: 600;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 6px 15px 8px 18px;
   border-radius: 15px 0 0 15px;
 }
@@ -301,7 +301,7 @@ input[type="number"] {
 .yellow-circle1 {
   height: 520px;
   width: 520px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   position: absolute;
   right: 0px;
   top: 37px;
@@ -410,7 +410,7 @@ input[type="number"] {
 .underline {
   width: 70px;
   height: 2px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   position: relative;
 }
 .underline::after {
@@ -419,7 +419,7 @@ input[type="number"] {
   position: absolute;
   height: 4px;
   border-radius: 50%;
-  background-color: #ffcc00;
+  background-color: #947f57;
   right: -11px;
   top: -1px;
 }
@@ -437,7 +437,7 @@ input[type="number"] {
 }
 
 .service-item:hover h5 {
-  color: #ffcc00;
+  color: #947f57;
 }
 .service-item:hover p {
   color: white;
@@ -479,7 +479,7 @@ input[type="number"] {
 }
 .viewmore-icon {
   float: left;
-  color: #ffcc00;
+  color: #947f57;
   font-size: 26px;
 }
 .btn-side {
@@ -503,7 +503,7 @@ input[type="number"] {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 700;
@@ -538,7 +538,7 @@ input[type="number"] {
   right: 12%;
   text-decoration: none;
   color: black;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 10px 50px;
   border-radius: 10px;
   font-weight: 700;
@@ -566,7 +566,7 @@ input[type="number"] {
   margin-bottom: 25px;
 }
 .ab-readmore-ico {
-  color: #ffcc00;
+  color: #947f57;
   font-size: 40px;
 }
 .ab-readmore {
@@ -582,7 +582,7 @@ input[type="number"] {
   margin-bottom: 90px;
 }
 .contact-head {
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 70px;
   border-radius: 15px;
 }
@@ -630,18 +630,18 @@ input[type="number"] {
   width: 13px;
   height: 13px;
   border: none;
-  background-color: #ffcc00;
+  background-color: #947f57;
   text-indent: -9999px;
   outline: 0;
   opacity: 0.3;
 }
 
 .slick-dots button:hover {
-  background-color: #ffcc00;
+  background-color: #947f57;
   opacity: 1;
 }
 .slick-active button {
-  background-color: #ffcc00;
+  background-color: #947f57;
   opacity: 1;
 }
 
@@ -792,7 +792,7 @@ input[type="number"] {
   background-color: #2a2a2a;
   font-size: 50px;
   border: none;
-  color: #ffcc00;
+  color: #947f57;
   display: flex;
   align-items: center;
   height: 146px;
@@ -808,7 +808,7 @@ input[type="number"] {
 .footer-submit button {
   background-color: transparent;
   border: none;
-  color: #ffcc00;
+  color: #947f57;
 }
 .botm-border {
   border-bottom: 1px solid #403f3f;
@@ -825,7 +825,7 @@ input[type="number"] {
 }
 
 .social-media-link li a {
-  color: #ffcc00;
+  color: #947f57;
   display: flex;
   align-items: center;
 }
@@ -838,14 +838,14 @@ input[type="number"] {
   color: inherit;
 }
 .footer-li-active a {
-  color: #ffcc00;
+  color: #947f57;
 }
 .footer-li-active ::after {
   content: "";
   position: absolute;
   width: 6px;
   height: 2px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   top: 11px;
   left: 0%;
 }
@@ -878,7 +878,7 @@ input[type="number"] {
 .phone-num-ftr {
   font-weight: 600;
   font-size: 22px;
-  color: #ffcc00;
+  color: #947f57;
 }
 .copyright {
   background-color: black;
@@ -944,7 +944,7 @@ input[type="number"] {
   font-size: 14px;
 }
 .breadcrumb-item-active a {
-  color: #ffcc00;
+  color: #947f57;
 }
 
 .ab-contact {
@@ -974,7 +974,7 @@ input[type="number"] {
   text-decoration: none;
   color: black;
   font-size: 18px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 700;
@@ -986,7 +986,7 @@ input[type="number"] {
   margin-bottom: 90px;
 }
 .progres-head {
-  background-color: #ffcc00;
+  background-color: #947f57;
   position: relative;
   padding: 25px;
   border-radius: 15px;
@@ -1069,7 +1069,7 @@ input[type="number"] {
   margin-bottom: 90px;
 }
 .exp-contact-bx {
-  background-color: #ffcc00;
+  background-color: #947f57;
   position: relative;
   padding: 41px 29px;
   border-radius: 15px;
@@ -1171,17 +1171,17 @@ input[type="number"] {
 
 .icon-location {
   font-size: 35px;
-  color: #ffcc00;
+  color: #947f57;
   margin-bottom: 7px;
 }
 .phone-icon {
   font-size: 35px;
-  color: #ffcc00;
+  color: #947f57;
   margin-bottom: 4px;
 }
 .email-icon {
   font-size: 35px;
-  color: #ffcc00;
+  color: #947f57;
   margin-bottom: 3px;
 }
 .para-bx a {
@@ -1241,7 +1241,7 @@ input[type="number"] {
 .form-btn input {
   color: black;
   font-size: 18px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 12px 25px;
   border-radius: 10px;
   font-weight: 700;
@@ -1278,7 +1278,7 @@ input[type="number"] {
   float: left;
   width: 70px;
   height: 70px;
-  border: 1px solid #ffcc00;
+  border: 1px solid #947f57;
   text-align: center;
   border-radius: 50%;
   display: flex;
@@ -1288,11 +1288,11 @@ input[type="number"] {
 }
 .fc-circle .iconify {
   font-size: 40px;
-  color: #ffcc00;
+  color: #947f57;
 }
 .free-call a {
   text-decoration: none;
-  color: #ffcc00;
+  color: #947f57;
   font-size: 40px;
   font-weight: 600;
 }
@@ -1349,7 +1349,7 @@ section.service-dtls {
   margin-bottom: 25px;
 }
 .service-list-active {
-  background-color: #ffcc00;
+  background-color: #947f57;
   color: black;
   border-radius: 10px;
 }
@@ -1384,7 +1384,7 @@ section.service-dtls {
 .sd-circle {
   width: 40px;
   height: 40px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   border-radius: 50%;
   text-align: center;
   font-size: 20px;
@@ -1451,7 +1451,7 @@ section.service-dtls {
   text-decoration: none;
   color: black;
   font-size: 14px;
-  background-color: #ffcc00;
+  background-color: #947f57;
   padding: 10px 15px;
   border-radius: 10px;
   border: none;
@@ -1486,7 +1486,7 @@ section.service-dtls {
   transition: 0.25s;
 }
 [type="radio"]:checked + label {
-  background: #ffcc00;
+  background: #947f57;
 }
 [type="radio"]:nth-of-type(2):checked ~ .gallery .card:not(.tab-2),
 [type="radio"]:nth-of-type(3):checked ~ .gallery .card:not(.tab-3),

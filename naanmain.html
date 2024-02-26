@@ -85,6 +85,11 @@
             .nav-item li-active {
                 background-color: #555;
             }
+
+            /* Adjusted style to show nav when menu is toggled */
+            .nav.active {
+                display: flex;
+            }
         }
 
         /* Card styles */
@@ -143,5 +148,17 @@
             <div style="padding: 10px"><a href="naancontact.html" class="btn">Contact Us</a></div><div><a href="naanproducts.html" class="btn" >Explore Our Products</a></div>
         </div>
     </div>
+
+    <script>
+        // JavaScript to toggle the navigation menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('mobile-menu');
+            const nav = document.querySelector('.nav');
+
+            menuToggle.addEventListener('click', function () {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

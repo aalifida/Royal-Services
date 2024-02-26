@@ -72,7 +72,7 @@
             }
 
             .nav {
-                display: none;
+                display: none; /* Hide the nav by default on mobile */
                 flex-direction: column;
                 background-color: #333;
                 padding: 10px;
@@ -82,8 +82,21 @@
                 margin: 10px 0;
             }
 
-            .nav-item li-active {
-                background-color: #555;
+            .nav-item:last-child {
+                margin-bottom: 0; /* Remove bottom margin for last nav item */
+            }
+
+            .nav-item a {
+                color: #fff; /* Ensure links are visible */
+            }
+
+            .nav-item a:hover {
+                color: #ccc; /* Hover effect for links */
+            }
+
+            /* Adjusted style to show nav when menu is toggled */
+            .nav.active {
+                display: flex;
             }
         }
 
@@ -145,18 +158,29 @@
     <!-- Contact Details -->
     <div class="container">
         <div class="card">
-            <h2>Adress</h2>
+            <h2>Address</h2>
             <p>Royal Naan ApS</p>
             <p>H.J. Holst vej 6</p>
             <p>2610 Rødovre</p>
             <p>CVR: 44253348</p>
             <div class="contact-details">
-                <p>Phone:004591455178</p>
-                <p>Email:info@royalservicesdk.com</p>
-                
+                <p>Phone: 004591455178</p>
+                <p>Email: info@royalservicesdk.com</p>
             </div>
             <a href="tel:004591455178" class="btn">Contact Us</a>
         </div>
     </div>
+
+    <script>
+        // JavaScript to toggle the navigation menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('mobile-menu');
+            const nav = document.querySelector('.nav');
+
+            menuToggle.addEventListener('click', function () {
+                nav.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

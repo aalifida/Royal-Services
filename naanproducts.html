@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Naan</title>
+    <style>
+        /* Resetting some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles for the navbar */
+        .mobile-menu {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Align items to left and right */
+            align-items: center;
+        }
+
+        .navbar img {
+            height: 40px; /* Adjust as needed */
+        }
+
+        .menu-toggle {
+            display: none; /* Hide by default for desktop */
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        .nav-item:last-child {
+            margin-right: 0;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Styles for mobile */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                padding: 10px;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .nav-item li-active {
+                background-color: #555;
+            }
+        }
+
+        /* Card styles */
+        .bar{
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 20px auto;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .description {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="mobile-menu">
+        <div class="bar">
+            <nav class="navbar">
+                <a href="index.html"><img src="images/Logo(4).png" alt="Royal Naan"></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="naanmain.html">Home</a></li>
+                    <li class="nav-item"><a href="naanproducts.html">Products</a></li>
+                    <li class="nav-item"><a href="naancontact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br><br><br>
+    <div class="container">
+        <div class="card">
+            <img src="images/Naan/PlaneNaan.png" alt="Naan 1">
+            <h2>Plain Naan</h2>
+            <p class="price">Starting from 6 DKK</p>
+            <p class="description">Classic soft naan without any additional toppings, perfect for dipping in curries or enjoying on its own. Made with a blend of flour, water, yeast, and a pinch of salt.</p>
+        </div>
+        <!-- Repeat similar structure for other naan items -->
+        <div class="card">
+            <img src="images/Naan/GarlicNaan.png" alt="Naan 2">
+            <h2>Garlic Naan</h2>
+            <p class="price">15 DKK</p>
+            <p class="description">Naan bread topped with garlic and herbs. A flavorful twist on the classic naan, perfect for pairing with spicy dishes or as a standalone snack. Made with fresh garlic, butter, and cilantro.</p>
+        </div>
+        <!-- Repeat similar structure for other naan items -->
+        <div class="card">
+            <img src="images/Naan/CheeseNaan.png" alt="Naan 3">
+            <h2>Cheese Naan</h2>
+            <p class="price">30 DKK</p>
+            <p class="description">Naan stuffed with melted cheese. A decadent variation of traditional naan, the melted cheese filling adds a creamy texture and richness to every bite. Made with a blend of mozzarella and cheddar cheese.</p>
+        </div>
+        <div class="card">
+            <img src="images/Naan/RoghniNaan.png" alt="Naan 4">
+            <h2>Roghni Naan</h2>
+            <p class="price">14 DKK</p>
+            <p class="description">Roghni Naan is a classic soft naan without any additional toppings, perfect for dipping in curries or enjoying on its own. Made with a blend of flour, water, yeast, and a pinch of salt.</p>
+        </div>
+        <!-- Repeat similar structure for other naan items -->
+        <div class="card">
+            <img src="images/Naan/QeemaNaan.png" alt="Naan 5">
+            <h2>Qeema Naan</h2>
+            <p class="price">45 DKK</p>
+            <p class="description">Qeema Naan is naan bread topped with a savory minced meat mixture, garlic, and herbs. A hearty and satisfying option, perfect for meat lovers. Made with seasoned minced meat, onions, and spices.</p>
+        </div>
+        <!-- Repeat similar structure for other naan items -->
+        <div class="card">
+            <img src="images/Naan/AALO NAAN.png" alt="Naan 6">
+            <h2>Aalo Naan</h2>
+            <p class="price">30 DKK</p>
+            <p class="description">Aalo Naan is naan stuffed with a flavorful potato filling. A delicious and comforting choice, combining the softness of naan bread with the creamy texture of mashed potatoes. Made with seasoned mashed potatoes, onions, and spices.</p>
+        </div>
+    </div>
+</body>
+</html>

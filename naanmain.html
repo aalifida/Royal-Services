@@ -3,57 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Naan - Coming Soon</title>
+    <title>Royal Naan</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(18, 18, 18); /* Changed background color to black */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* Resetting some default styles */
+        * {
             margin: 0;
-            color: white; /* Changed text color to white */
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
-            color: #947f57; /* Changed text color to gold */
-            margin-bottom: 20px; /* Added margin */
+        /* Basic styles for the navbar */
+        .mobile-menu {
+            background-color: #333;
+            padding: 10px 0;
         }
 
-        .content {
-            text-align: center; /* Center align content */
-            max-width: 600px; /* Limit maximum width */
-            margin: 0 auto; /* Center content horizontally */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        p {
-            margin-bottom: 20px; /* Added margin */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            background-color: #947f57; /* Changed button background color to gold */
-            color: black; /* Changed text color to black */
+        .navbar img {
+            height: 40px; /* Adjust as needed */
+        }
+
+        .menu-toggle {
+            display: none; /* Hide by default for desktop */
             cursor: pointer;
-            border-radius: 5px; /* Added border radius */
-            width: 200px; /* Button width */
         }
 
-        .button:hover {
-            background-color: #DAA520; /* Darker shade of gold on hover */
+        .menu-toggle .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+        }
+
+        .nav {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        .nav-item:last-child {
+            margin-right: 0;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* Styles for mobile */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                padding: 10px;
+            }
+
+            .nav-item {
+                margin: 10px 0;
+            }
+
+            .nav-item li-active {
+                background-color: #555;
+            }
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .card p {
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
-    <h1>Royal Naan - Coming Soon</h1>
-    <div class="content">
-        <p>We are currently working on this section. Stay tuned for delicious updates!</p>
-        <p>Meanwhile, you can explore our other services.</p>
-        <a href="index.html" class="button">Back to Homepage</a>
+    <!-- Navbar -->
+    <header class="mobile-menu">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html"><img src="images/Logo(4).png" alt="Royal Naan"></a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar bar1"></span>
+                    <span class="bar bar2"></span>
+                </div>
+                <ul class="nav no-search">
+                    <li class="nav-item"><a href="naanmain.html">Home</a></li>
+                    <li class="nav-item"><a href="naanproducts.html">Products</a></li>
+                    <li class="nav-item"><a href="naancontact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h1 style="text-shadow: #333 ;">Who We Are</h1>
+            <p>Royal Naan is a renowned naan bakery located in the heart of Copenhagen. We specialize in crafting traditional and innovative naan breads that cater to the diverse palates of our customers. Our journey began several years ago with a passion for creating authentic naan recipes passed down through generations.</p>
+            <p>At Royal Naan, we take pride in using only the finest quality ingredients sourced locally to ensure the freshest and most flavorful naan breads. Whether you're craving classic plain naan or adventurous flavors like garlic, cheese, or keema naan, we have something to tantalize your taste buds.</p>
+            <p>Our commitment to excellence extends beyond our products to our customer service. We strive to provide a warm and welcoming atmosphere where every customer feels valued and appreciated. Whether you're stopping by for a quick snack or placing a catering order for your special event, we are dedicated to exceeding your expectations.</p>
+            <div style="padding: 10px"><a href="naancontact.html" class="btn">Contact Us</a></div><div><a href="naanproducts.html" class="btn" >Explore Our Products</a></div>
+        </div>
     </div>
 </body>
 </html>

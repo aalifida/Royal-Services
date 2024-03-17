@@ -628,7 +628,24 @@
         });
 
     </script>
-
+    <script>
+        (function () {
+            emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
+        })();
+    </script>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            emailjs.sendForm('service_0nzbxun', 'template_lhzi4of', this)
+                .then(function (response) {
+                    console.log('Email sent successfully:', response);
+                    // Add any success message or redirection here
+                }, function (error) {
+                    console.error('Email sending failed:', error);
+                    // Add any error handling here
+                });
+        });
+    </script>
     <script>
         emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
     
@@ -659,6 +676,17 @@
                 });
         });
     </script>
+    <script>
+        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            // Your form submission code using EmailJS goes here
+    
+            // Show success message
+            alert("Thank you for Your Appointment. We will contact you soon.");
+        });
+    </script>
+    
     
 </body>
 

@@ -88,7 +88,6 @@
         </div>
     </section>
 
-    <!-- book an appointmnt modal -->
     <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md appointmnt-modal-dialog">
             <div class="modal-content booking-model-content">
@@ -117,6 +116,7 @@
                         <button type="submit">Submit</button>
                     </div>
                 </form>
+                
 
             </div>
         </div>
@@ -422,65 +422,65 @@
         });
 
     </script>
+     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
      <script>
-        (function () {
-            emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
-        })();
-    </script>
-    <script>
-        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            emailjs.sendForm('service_0nzbxun', 'template_lhzi4of', this)
-                .then(function (response) {
-                    console.log('Email sent successfully:', response);
-                    // Add any success message or redirection here
-                }, function (error) {
-                    console.error('Email sending failed:', error);
-                    // Add any error handling here
-                });
-        });
-    </script>
-    <script>
-        emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
-    
-        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-    
-            var name = document.getElementById('name').value;
-            var phone = document.getElementById('phone').value;
-            var email = document.getElementById('email').value;
-            var serviceType = document.getElementById('serviceType').value;
-            var serviceDetails = document.getElementById('serviceDetails').value;
-    
-            var templateParams = {
-                name: name,
-                phone: phone,
-                email: email,
-                serviceType: serviceType,
-                message: serviceDetails
-            };
-    
-            emailjs.send('service_0nzbxun', 'template_lhzi4of', templateParams)
-                .then(function (response) {
-                    console.log('Email sent successfully:', response);
-                    // Add any success message or redirection here
-                }, function (error) {
-                    console.error('Email sending failed:', error);
-                    // Add any error handling here
-                });
-        });
-    </script>
-    <script>
-        document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-    
-            // Your form submission code using EmailJS goes here
-    
-            // Show success message
-            alert("Thank you for Your Appointment. We will contact you soon.");
-        });
-    </script>
-
+         (function () {
+             emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
+         })();
+     </script>
+     <script>
+         document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+             event.preventDefault();
+             emailjs.sendForm('service_0nzbxun', 'template_lhzi4of', this)
+                 .then(function (response) {
+                     console.log('Email sent successfully:', response);
+                     // Add any success message or redirection here
+                 }, function (error) {
+                     console.error('Email sending failed:', error);
+                     // Add any error handling here
+                 });
+         });
+     </script>
+     <script>
+         emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
+     
+         document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+             event.preventDefault();
+     
+             var name = document.getElementById('name').value;
+             var phone = document.getElementById('phone').value;
+             var email = document.getElementById('email').value;
+             var serviceType = document.getElementById('serviceType').value;
+             var serviceDetails = document.getElementById('serviceDetails').value;
+     
+             var templateParams = {
+                 name: name,
+                 phone: phone,
+                 email: email,
+                 serviceType: serviceType,
+                 message: serviceDetails
+             };
+     
+             emailjs.send('service_0nzbxun', 'template_lhzi4of', templateParams)
+                 .then(function (response) {
+                     console.log('Email sent successfully:', response);
+                     // Add any success message or redirection here
+                 }, function (error) {
+                     console.error('Email sending failed:', error);
+                     // Add any error handling here
+                 });
+         });
+     </script>
+     <script>
+         document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+             event.preventDefault();
+     
+             // Your form submission code using EmailJS goes here
+     
+             // Show success message
+             alert("Thank you for Your Appointment. We will contact you soon.");
+         });
+     </script>
 </body>
 
 </html>

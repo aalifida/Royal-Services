@@ -85,33 +85,35 @@
 <!-- book an appointmnt modal -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-md appointmnt-modal-dialog">
-    <div class="modal-content booking-model-content">
-      <div class="modal-header booking-pop-head">
-        <h5 class="modal-title" id="exampleModalLabel">Book an Appointment</h5>
-        <button type="button" class="" data-bs-dismiss="modal" aria-label="Close"><span class="iconify" data-icon="ep:close-bold"></span></button>
-      </div> 
-     <form id="appointmentForm">
-                    <div class="modal-body booking-pop-body">
-                        <input type="text" id="name" class="popup-form" placeholder="Name" required>
-                        <input type="tel" id="phone" class="popup-form" placeholder="Phone" required>
-                        <input type="email" id="email" class="popup-form" placeholder="Email" required>
-                        <select id="serviceType" class="popup-form" required>
-                            <option value="">Service Type</option>
-                            <option value="House Cleaning">House Cleaning</option>
-                            <option value="Gardening">Gardening</option>
-                            <option value="Office Cleaning">Office Cleaning</option>
-                            <option value="Stairs Cleaning">Stairs Cleaning</option>
-                            <option value="General Cleaning">General Cleaning</option>
-                            <option value="Windows Cleaning">Windows Cleaning</option>
-                        </select>
-                        <textarea id="serviceDetails" cols="30" rows="3" class="popup-form" placeholder="Brief detail of service" required></textarea>
-                    </div>
-                    <div class="modal-footer booking-pop-footer">
-                        <button type="submit">Submit</button>
-                    </div>
-                </form>
-       
-    </div>
+      <div class="modal-content booking-model-content">
+          <div class="modal-header booking-pop-head">
+              <h5 class="modal-title" id="exampleModalLabel">Book an Appointment</h5>
+              <button type="button" class="" data-bs-dismiss="modal" aria-label="Close"><span class="iconify"
+                      data-icon="ep:close-bold"></span></button>
+          </div>
+          <form id="appointmentForm">
+              <div class="modal-body booking-pop-body">
+                  <input type="text" id="name" class="popup-form" placeholder="Name" required>
+                  <input type="tel" id="phone" class="popup-form" placeholder="Phone" required>
+                  <input type="email" id="email" class="popup-form" placeholder="Email" required>
+                  <select id="serviceType" class="popup-form" required>
+                      <option value="">Service Type</option>
+                      <option value="House Cleaning">House Cleaning</option>
+                      <option value="Gardening">Gardening</option>
+                      <option value="Office Cleaning">Office Cleaning</option>
+                      <option value="Stairs Cleaning">Stairs Cleaning</option>
+                      <option value="General Cleaning">General Cleaning</option>
+                      <option value="Windows Cleaning">Windows Cleaning</option>
+                  </select>
+                  <textarea id="serviceDetails" cols="30" rows="3" class="popup-form" placeholder="Brief detail of service" required></textarea>
+              </div>
+              <div class="modal-footer booking-pop-footer">
+                  <button type="submit">Submit</button>
+              </div>
+          </form>
+          
+
+      </div>
   </div>
 </div>
 <!--  -->
@@ -400,63 +402,64 @@ $(this).toggleClass("is-active");
 });
 
 </script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  (function () {
-      emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
-  })();
+    (function () {
+        emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
+    })();
 </script>
 <script>
-  document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      emailjs.sendForm('service_0nzbxun', 'template_lhzi4of', this)
-          .then(function (response) {
-              console.log('Email sent successfully:', response);
-              // Add any success message or redirection here
-          }, function (error) {
-              console.error('Email sending failed:', error);
-              // Add any error handling here
-          });
-  });
+    document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        emailjs.sendForm('service_0nzbxun', 'template_lhzi4of', this)
+            .then(function (response) {
+                console.log('Email sent successfully:', response);
+                // Add any success message or redirection here
+            }, function (error) {
+                console.error('Email sending failed:', error);
+                // Add any error handling here
+            });
+    });
 </script>
 <script>
-  emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
+    emailjs.init("QcwtguqLHpZMwkXMp"); // Replace with your EmailJS user ID
 
-  document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-      event.preventDefault();
+    document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      var name = document.getElementById('name').value;
-      var phone = document.getElementById('phone').value;
-      var email = document.getElementById('email').value;
-      var serviceType = document.getElementById('serviceType').value;
-      var serviceDetails = document.getElementById('serviceDetails').value;
+        var name = document.getElementById('name').value;
+        var phone = document.getElementById('phone').value;
+        var email = document.getElementById('email').value;
+        var serviceType = document.getElementById('serviceType').value;
+        var serviceDetails = document.getElementById('serviceDetails').value;
 
-      var templateParams = {
-          name: name,
-          phone: phone,
-          email: email,
-          serviceType: serviceType,
-          message: serviceDetails
-      };
+        var templateParams = {
+            name: name,
+            phone: phone,
+            email: email,
+            serviceType: serviceType,
+            message: serviceDetails
+        };
 
-      emailjs.send('service_0nzbxun', 'template_lhzi4of', templateParams)
-          .then(function (response) {
-              console.log('Email sent successfully:', response);
-              // Add any success message or redirection here
-          }, function (error) {
-              console.error('Email sending failed:', error);
-              // Add any error handling here
-          });
-  });
+        emailjs.send('service_0nzbxun', 'template_lhzi4of', templateParams)
+            .then(function (response) {
+                console.log('Email sent successfully:', response);
+                // Add any success message or redirection here
+            }, function (error) {
+                console.error('Email sending failed:', error);
+                // Add any error handling here
+            });
+    });
 </script>
 <script>
-  document.getElementById('appointmentForm').addEventListener('submit', function (event) {
-      event.preventDefault();
+    document.getElementById('appointmentForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      // Your form submission code using EmailJS goes here
+        // Your form submission code using EmailJS goes here
 
-      // Show success message
-      alert("Thank you for Your Appointment. We will contact you soon.");
-  });
+        // Show success message
+        alert("Thank you for Your Appointment. We will contact you soon.");
+    });
 </script>
 
 

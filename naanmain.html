@@ -113,10 +113,17 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-right: 5px; /* Reduced margin between buttons */
         }
 
         .btn:hover {
             background-color: #555;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-start; /* Align buttons to the start */
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -145,7 +152,11 @@
             <p>Royal Naan is a renowned naan bakery located in the heart of Copenhagen. We specialize in crafting traditional and innovative naan breads that cater to the diverse palates of our customers. Our journey began several years ago with a passion for creating authentic naan recipes passed down through generations.</p>
             <p>At Royal Naan, we take pride in using only the finest quality ingredients sourced locally to ensure the freshest and most flavorful naan breads. Whether you're craving classic plain naan or adventurous flavors like garlic, cheese, or keema naan, we have something to tantalize your taste buds.</p>
             <p>Our commitment to excellence extends beyond our products to our customer service. We strive to provide a warm and welcoming atmosphere where every customer feels valued and appreciated. Whether you're stopping by for a quick snack or placing a catering order for your special event, we are dedicated to exceeding your expectations.</p>
-            <div style="padding: 10px"><a href="naancontact.html" class="btn">Contact Us</a></div><div><a href="naanproducts.html" class="btn" >Explore Our Products</a></div>
+            <div class="btn-container">
+                <a href="naanproducts.html" class="btn">Products</a>
+                <a href="naancontact.html" class="btn">Contact Us</a>
+                <a href="https://www.google.com/maps/place/Royal+Naan+ApS/@55.6720057,12.438674,17z/data=!3m1!4b1!4m6!3m5!1s0x465251374ba1d3c5:0x8fdb530b614f5ec6!8m2!3d55.6720057!4d12.4412489!16s%2Fg%2F11mr2_wpdn?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" class="btn">View Location</a>
+            </div>
         </div>
     </div>
     <section class="copyright">

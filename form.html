@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Your Naan & Roti - Royal Naan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .cart {
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item h3 {
+            font-size: 18px;
+        }
+
+        .cart-item p {
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .cart-item input,
+        .cart-item select {
+            width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .cart-item input[type="number"] {
+            width: 60px;
+        }
+
+        .cart-item .remove-btn {
+            background-color: #f0f0f0;
+            color: #333;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-item .remove-btn:hover {
+            background-color: #ddd;
+        }
+
+        .total-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-top: 2px solid #ddd;
+        }
+
+        .total-section .total-label {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .btn-submit {
+            background-color: #00aaff; /* Blue color to match product page */
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0088cc;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .modal-header {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .modal-body {
+            margin: 20px 0;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Custom colors for input fields */
+        input[type="date"], input[type="time"], select {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Add Items to your Cart</h2>
+
+        <form id="orderForm" action="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/e/1FAIpQLSdvsm_kVKfQahtoV5_XcO-gniV-kCAc6wRUOFFPpnzSJOFO_Q/viewform?usp=header/formResponse" method="POST">
+            
+            <!-- Customer Information -->
+            <div class="form-group">
+                <label for="customer-name">Name:</label>
+                <input type="text" id="customer-name" name="entry.1122334455" required>
+            </div>
+
+            <div class="form-group">
+                <label for="customer-phone">Phone Number:</label>
+                <input type="tel" id="customer-phone" name="entry.2233445566" required>
+            </div>
+
+            <!-- Cart Items -->
+            <div class="cart">
+                <div class="cart-item">
+                    <div>
+                        <h3>Plain Naan</h3>
+                        <p>Price: 8 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889900" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334460" required>
+                            <option value="Plain Naan">Plain Naan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Garlic Naan</h3>
+                        <p>Price: 15 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889901" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334461" required>
+                            <option value="Garlic Naan">Garlic Naan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Cheese Naan</h3>
+                        <p>Price: 30 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889902" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334462" required>
+                            <option value="Cheese Naan">Cheese Naan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Roghni Naan</h3>
+                        <p>Price: 14 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889903" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334463" required>
+                            <option value="Roghni Naan">Roghni Naan</option>
+                        </select>
+    
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Qeema Naan</h3>
+                        <p>Price: 45 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889904" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334464" required>
+                            <option value="Chicken">Chicken</option>
+                            <option value="Beef">Beef</option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Aloo Naan</h3>
+                        <p>Price: 30 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889905" min="0" value="0" required onchange="calculateTotal()">
+                        <select name="entry.1122334465" required>
+                            <option value="Aloo Naan">Aloo Naan</option>
+                        </select>
+                        
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <div>
+                        <h3>Roti</h3>
+                        <p>Price: 10 DKK</p>
+                    </div>
+                    <div>
+                        <input type="number" name="entry.6677889906" min="0" value="0" required onchange="calculateTotal()">
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-section">
+                <div class="total-label">Total:</div>
+                <div id="totalAmount">0 DKK</div>
+            </div>
+
+            <!-- Pickup Date and Time -->
+            <div class="form-group">
+                <label for="pickup-date">Pickup Date:</label>
+                <input type="date" id="pickup-date" name="entry.3344556677" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pickup-time">Pickup Time:</label>
+                <input type="time" id="pickup-time" name="entry.4455667788" required>
+            </div>
+
+            <!-- Special Instructions -->
+            <div class="form-group">
+                <label for="special-instructions">Special Instructions:</label>
+                <textarea id="special-instructions" name="entry.5566778899"></textarea>
+            </div>
+
+            <button type="button" class="btn-submit" id="submitOrder">Submit Order</button>
+
+        </form>
+    </div>
+
+    <!-- Modal for Confirmation -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Order Summary</h2>
+            </div>
+            <div class="modal-body" id="orderSummary">
+                <!-- Order summary will be displayed here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancelOrder">Cancel</button>
+                <button type="button" id="confirmOrder">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Real-time Total Calculation
+        function calculateTotal() {
+            let totalAmount = 0;
+            const cartItems = document.querySelectorAll(".cart-item");
+
+            cartItems.forEach(item => {
+                const quantity = item.querySelector("input[type='number']").value;
+                const price = parseInt(item.querySelector("p").innerText.split(" ")[1]);
+                totalAmount += quantity * price;
+            });
+
+            document.getElementById("totalAmount").textContent = totalAmount + " DKK";
+        }
+
+        
+        document.getElementById("submitOrder").addEventListener("click", function() {
+            let summary = "Name: " + document.getElementById("customer-name").value + "\n";
+            summary += "Phone Number: " + document.getElementById("customer-phone").value + "\n";
+            summary += "Pickup Date: " + document.getElementById("pickup-date").value + "\n";
+            summary += "Pickup Time: " + document.getElementById("pickup-time").value + "\n";
+            summary += "Special Instructions: " + document.getElementById("special-instructions").value + "\n";
+
+            let totalAmount = 0;
+            const cartItems = document.querySelectorAll(".cart-item");
+            cartItems.forEach(item => {
+                const quantity = item.querySelector("input[type='number']").value;
+                const price = parseInt(item.querySelector("p").innerText.split(" ")[1]);
+                totalAmount += quantity * price;
+            });
+
+            summary += "Total Amount: " + totalAmount + " DKK";
+
+            // Display order summary in the modal
+            document.getElementById("orderSummary").textContent = summary;
+            document.getElementById("orderModal").style.display = "block";
+        });
+
+        // Close modal
+        document.querySelector(".close").onclick = function() {
+            document.getElementById("orderModal").style.display = "none";
+        }
+
+        document.getElementById("cancelOrder").addEventListener("click", function() {
+            document.getElementById("orderModal").style.display = "none";
+        });
+
+        document.getElementById("confirmOrder").addEventListener("click", function() {
+            document.getElementById("orderForm").submit();
+        });
+
+        // Close modal when clicking outside the modal
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("orderModal")) {
+                document.getElementById("orderModal").style.display = "none";
+            }
+        }
+
+        // Initialize real-time total calculation
+        calculateTotal();
+    </script>
+
+</body>
+</html>

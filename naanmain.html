@@ -121,21 +121,7 @@
             display: flex;
             justify-content: flex-start;
             margin-top: 10px;
-        }
-
-        /* Upload section */
-        .upload-section {
-            margin-top: 20px;
-        }
-
-        .preview {
-            margin-top: 15px;
-        }
-
-        .preview img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
         }
     </style>
 </head>
@@ -167,13 +153,8 @@
                 <a href="naanproducts.html" class="btn">Products</a>
                 <a href="naancontact.html" class="btn">Contact Us</a>
                 <a href="https://www.google.com/maps/place/Royal+Naan+ApS/" class="btn">View Location</a>
-            </div>
-
-            <!-- Upload Section -->
-            <div class="upload-section">
-                <label for="uploadReport" class="btn">Upload Inspection Report</label>
-                <input type="file" id="uploadReport" name="inspectionReport" accept="image/*" style="display:none;">
-                <div class="preview" id="preview"></div>
+                <!-- New Button -->
+                <a href="/Applications/Files/GitHub/Royal-Services/images/Naan/repp.jpeg" class="btn">Inspection Report</a>
             </div>
         </div>
     </div>
@@ -193,21 +174,6 @@
 
             menuToggle.addEventListener('click', function () {
                 nav.classList.toggle('active');
-            });
-
-            // File upload preview
-            const uploadInput = document.getElementById('uploadReport');
-            const preview = document.getElementById('preview');
-
-            uploadInput.addEventListener('change', function () {
-                const file = this.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function (e) {
-                        preview.innerHTML = `<img src="${e.target.result}" alt="Inspection Report">`;
-                    }
-                    reader.readAsDataURL(file);
-                }
             });
         });
     </script>
